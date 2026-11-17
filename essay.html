@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>散文 · 清欢 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link active" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/essay.png" alt="散文清欢">
+  <div class="hero-text">
+    <div class="kicker">ESSAY · 专栏三</div>
+    <h1>散文 · 清欢</h1>
+    <p>把日子过成句子 —— 那些温柔、辽阔、热气腾腾的人生观察。</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="quote">但是，黄昏来了，我不得不安静下来。<span class="from">—— 朱自清</span></div>
+  <p class="section-sub">散文没有情节的鞭子赶着你跑，却有一种慢下来的魔力。有的写草木，有的写故乡，有的写废墟上的文明。适合配一杯热茶，慢慢地读。</p>
+  <div class="grid" id="essay-list"></div>
+</div>
+
+<footer>
+  拾光书房 · 散文 · 清欢 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>renderCategory("essay", "essay-list");</script>
+
+</body>
+</html>

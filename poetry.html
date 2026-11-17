@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>诗 · 星辰 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link active" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/poetry.png" alt="现代诗歌">
+  <div class="hero-text">
+    <div class="kicker">POETRY · 专栏一</div>
+    <h1>诗 · 星辰</h1>
+    <p>最短的语言，最远的远方 —— 每一首诗都是一个被压缩成几行的宇宙。</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="quote">从明天起，做一个幸福的人 / 喂马，劈柴，周游世界。<span class="from">—— 海子《面朝大海，春暖花开》</span></div>
+  <p class="section-sub">诗歌从不解决问题，但它让你在问题面前站得更美。以下诗集适合在深夜台灯下、清晨通勤路上随手翻开，每次一页，收获一小片晴天。</p>
+  <div class="grid" id="poetry-list"></div>
+</div>
+
+<footer>
+  拾光书房 · 诗 · 星辰 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>renderCategory("poetry", "poetry-list");</script>
+
+</body>
+</html>

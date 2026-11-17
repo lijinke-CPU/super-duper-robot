@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>网文天地 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link active" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/fantasy.png" alt="网文天地">
+  <div class="hero-text">
+    <div class="kicker">WEB NOVEL · 专栏四</div>
+    <h1>网文天地</h1>
+    <p>从诡秘之主到斗气大陆 —— 中文网络小说二十年的想象力狂欢。</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="quote">愚者不争，智者守拙。<span class="from">—— 《诡秘之主》读者题词</span></div>
+  <p class="section-sub">网络小说是中文互联网最旺盛的想象力工厂。这里没有道德优越感，只有「好看」二字。以下作品每部动辄百万字、千万读者，堪称网文史上的里程碑。</p>
+  <div class="grid" id="webnovel-list"></div>
+  <div class="quote" style="margin-top:40px;">网文避雷小贴士：先看均订与口碑，再入坑长篇；百万字大部头请合理安排作息——熬夜一时爽，早八火葬场。</div>
+</div>
+
+<footer>
+  拾光书房 · 网文天地 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>renderCategory("webnovel", "webnovel-list");</script>
+
+</body>
+</html>

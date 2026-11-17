@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品详情 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<div class="container" id="detail-box">
+  <div class="empty">正在为你翻开这一页……</div>
+</div>
+
+<footer>
+  拾光书房 · 作品详情 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+var params = new URLSearchParams(location.search);
+var id = params.get("id");
+var it = DB.find(function (x) { return x.id === id; });
+var box = document.getElementById("detail-box");
+
+if (!it) {
+  box.innerHTML = '<div class="empty">没有找到这部作品。<br><br><a class="btn" href="recommend.html">去「寻书问影」重新挑选</a></div>';
+} else {
+  var tagHtml = it.tags.map(function (t, i) { return '<span class="tag c' + ((i % 4) + 1) + '">' + t + '</span>'; }).join("");
+  var similar = DB.filter(function (x) { return x.cat === it.cat && x.id !== it.id; }).slice(0, 4);
+  var simHtml = similar.map(cardHtml).join("");
+
+  box.innerHTML =
+    '<div class="detail-head">' +
+      '<div class="detail-cover"><img src="' + coverOf(it) + '" alt="' + it.title + '"></div>' +
+      '<div class="detail-info">' +
+        '<div class="cat-line">' + CAT_NAME[it.cat] + ' · ' + KIND_NAME[it.kind] + '</div>' +
+        '<h1>' + it.title + '</h1>' +
+        '<div class="meta">' + it.author + ' ｜ <span class="stars">' + starsHtml(it.rating) + '</span></div>' +
+        '<div class="tags">' + tagHtml + '</div>' +
+        '<div class="block-title">作品简介</div>' +
+        '<p class="desc">' + it.intro + '</p>' +
+        '<div class="block-title">值得记住的一句话</div>' +
+        '<div class="quote" style="margin-top:0;">' + it.quote + '</div>' +
+        '<div class="block-title">书房荐语</div>' +
+        '<p class="desc">' + it.reason + '</p>' +
+        '<div class="back-line"><a class="btn" href="javascript:history.back()">← 返回上一页</a>　<a class="btn solid" href="recommend.html">继续寻书问影 →</a></div>' +
+      '</div>' +
+    '</div>' +
+    '<h2 class="section-title"><span class="no">荐</span>同类书影 · 也许你也喜欢</h2>' +
+    '<div class="grid">' + simHtml + '</div>';
+
+  document.title = it.title + " · 拾光书房";
+}
+</script>
+
+</body>
+</html>

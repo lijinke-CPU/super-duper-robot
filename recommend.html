@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寻书问影 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link active" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/romance.png" alt="寻书问影">
+  <div class="hero-text">
+    <div class="kicker">ASK &amp; DISCOVER · 你的私人荐书人</div>
+    <h1>寻书问影</h1>
+    <p>说出你想看的类型、心情，或随便一个词 —— 书房替你翻遍书架。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="ask-box">
+    <h2>今晚，想看点什么？</h2>
+    <div class="hint">例如：想看悬疑推理 / 心情低落想被治愈 / 来点仙侠虐文 / 看一部经典老电影……</div>
+    <div class="row">
+      <input type="text" id="q" placeholder="输入关键词，回车或点击「为我推荐」" autocomplete="off">
+      <button class="btn solid" onclick="doSearch()">为我推荐</button>
+    </div>
+    <div class="chip-row" id="chips"></div>
+  </div>
+
+  <h2 class="section-title" id="result-title" style="display:none;"><span class="no">荐</span><span id="result-label"></span></h2>
+  <div class="grid" id="result"></div>
+  <div class="empty" id="empty">「书房已备好 <span id="db-count"></span> 部书与电影，等你一句话。」</div>
+
+</div>
+
+<footer>
+  拾光书房 · 寻书问影 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+var CHIPS = ["诗歌","言情","仙侠","古言","耽美","百合","悬疑","推理","职场","散文","治愈","网文","科幻","电影","经典","青春"];
+document.getElementById("db-count").textContent = DB.length;
+var chipBox = document.getElementById("chips");
+CHIPS.forEach(function (c) {
+  var b = document.createElement("button");
+  b.className = "chip"; b.textContent = c;
+  b.onclick = function () {
+    document.getElementById("q").value = c;
+    doSearch();
+  };
+  chipBox.appendChild(b);
+});
+
+function doSearch() {
+  var q = document.getElementById("q").value.trim();
+  var box = document.getElementById("result");
+  var empty = document.getElementById("empty");
+  var title = document.getElementById("result-title");
+  var label = document.getElementById("result-label");
+  var list = searchItems(q);
+  box.innerHTML = list.map(cardHtml).join("");
+  empty.style.display = list.length ? "none" : "block";
+  title.style.display = list.length ? "flex" : "none";
+  label.textContent = '关于「' + q + '」的推荐 · 共 ' + list.length + ' 部';
+}
+document.getElementById("q").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") doSearch();
+});
+</script>
+
+</body>
+</html>

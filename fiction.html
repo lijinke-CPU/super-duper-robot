@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小说长廊 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link active" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/xianxia.png" alt="小说长廊">
+  <div class="hero-text">
+    <div class="kicker">FICTION · 专栏二</div>
+    <h1>小说长廊</h1>
+    <p>从十里桃花到白夜行走 —— 长廊两侧挂满了人间百味。</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2 class="section-title"><span class="no">一</span>言情 · 都市 · 职场</h2>
+  <p class="section-sub">从青涩暗恋到并肩成长，从写字楼格子间到人生旷野——爱情与生活的双倍浓度。</p>
+  <div class="grid" id="romance-list"></div>
+
+  <h2 class="section-title"><span class="no">二</span>仙侠 · 古言（男女言情向）</h2>
+  <p class="section-sub">山河为证，岁月为名。在架空世界里遇见最炽热的感情与最辽阔的江湖。</p>
+  <div class="grid" id="fantasy-list"></div>
+
+  <h2 class="section-title"><span class="no">三</span>耽美（男男向）</h2>
+  <p class="section-sub">少年与少年之间，最干净的深情与并肩。</p>
+  <div class="grid" id="danmei-list"></div>
+
+  <h2 class="section-title"><span class="no">四</span>百合（女女向）</h2>
+  <p class="section-sub">她们的故事：克制、锋利，又一往无前。</p>
+  <div class="grid" id="baihe-list"></div>
+
+  <h2 class="section-title"><span class="no">五</span>悬疑推理</h2>
+  <p class="section-sub">雨夜、密室、不在场证明——每一页都在逼你翻向真相。</p>
+  <div class="grid" id="mystery-list"></div>
+
+</div>
+
+<footer>
+  拾光书房 · 小说长廊 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+renderCategory("romance", "romance-list");
+renderCategory("fantasy", "fantasy-list", ["仙侠", "古言"]);
+renderCategory("fantasy", "danmei-list", ["耽美"]);
+renderCategory("fantasy", "baihe-list", ["百合"]);
+renderCategory("mystery", "mystery-list");
+</script>
+
+</body>
+</html>

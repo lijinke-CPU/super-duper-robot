@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光影银幕 · 拾光书房</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><i>拾</i>光书房</div>
+  <a class="link" href="index.html">首页</a>
+  <a class="link" href="recommend.html">寻书问影</a>
+  <a class="link" href="poetry.html">诗 · 星辰</a>
+  <a class="link" href="fiction.html">小说长廊</a>
+  <a class="link" href="essay.html">散文 · 清欢</a>
+  <a class="link" href="webnovel.html">网文天地</a>
+  <a class="link active" href="movie.html">光影银幕</a>
+  <a class="link" href="about.html">关于书房</a>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="images/movie.png" alt="光影银幕">
+  <div class="hero-text">
+    <div class="kicker">CINEMA · 专栏五</div>
+    <h1>光影银幕</h1>
+    <p>在两个小时里，借别人的一生长经验 —— 华语经典与世界佳片片单。</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="quote">电影发明以后，人类的生命比起以前延长了三倍。<span class="from">—— 杨德昌《一一》</span></div>
+  <p class="section-sub">以下片单以「影响范围广、知名度高」为标准，兼顾华语与世界、经典与新作。每部都是影史上绕不开的名字，适合一个周末一部地补完。</p>
+  <div class="grid" id="movie-list"></div>
+</div>
+
+<footer>
+  拾光书房 · 光影银幕 · <a href="index.html">返回首页</a>
+</footer>
+<a class="top-btn" href="#" title="回到顶部">⬆</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>renderCategory("movie", "movie-list");</script>
+
+</body>
+</html>
